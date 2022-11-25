@@ -1,0 +1,37 @@
+{
+  "name": "@casaub0n/rtwuri",
+  "version": "1.0.7",
+  "description": "redirect favorite host",
+  "license": "MIT",
+  "repository": "casaub0n/rtwuri",
+  "author": {
+    "name": "casaub0n",
+    "email": "netzach.yoshida@gmail.com",
+    "url": "https://github.com/casaub0n"
+  },
+  "main": "./dist/index.js",
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "build": "rimraf dist && parcel build src/index.ts --no-cache",
+    "test": "echo hello",
+    "npm:publish": "yarn build && yarn publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "userscript"
+  ],
+  "devDependencies": {
+    "@parcel/transformer-typescript-types": "^2.8.0",
+    "header-inserter": "1.0.8",
+    "parcel": "2.8.0",
+    "rimraf": "3.0.2",
+    "typescript": "4.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
