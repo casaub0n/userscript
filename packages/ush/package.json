@@ -1,9 +1,12 @@
 {
-  "name": "@casaub0n/rtwuri",
+  "name": "@casaub0n/ush",
   "version": "1.0.0",
-  "description": "redirect favorite host",
+  "description": "Inserting header in your bundle JavaScript file",
   "license": "MIT",
-  "repository": "casaub0n/rtwuri",
+  "repository": {
+    "url": "casaub0n/userscript",
+    "directory": "packages/ush"
+  },
   "author": {
     "name": "casaub0n",
     "email": "netzach.yoshida@gmail.com",
@@ -14,8 +17,9 @@
     "node": ">=12"
   },
   "scripts": {
-    "build": "rimraf dist && spack",
-    "test": "echo hello"
+    "test": "echo hello",
+    "bundle": "spack",
+    "build": "yarn bundle"
   },
   "files": [
     "dist"
@@ -23,14 +27,12 @@
   "keywords": [
     "userscript"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.3.20",
-    "header-inserter": "1.0.11",
-    "rimraf": "3.0.2",
-    "typescript": "4.9.3"
-  },
-  "publishConfig": {
-    "access": "public"
+    "typescript": "^4.9.3"
   }
 }

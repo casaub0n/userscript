@@ -105,3 +105,12 @@ dist
 
 # cache
 .parcel-cache
+
+# turbo
+.turbo
+
+# lib
+lib
+
+# dist
+dist
