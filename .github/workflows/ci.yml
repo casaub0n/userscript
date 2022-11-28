@@ -10,7 +10,7 @@ jobs:
       deployments: write
       statuses: write
 
-    name: Publish to Cloudflare Pages
+    name: Build userscript
     steps:
       - name: Checkout
         uses: actions/checkout@v3
