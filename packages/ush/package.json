@@ -18,8 +18,8 @@
   },
   "scripts": {
     "test": "echo hello",
-    "bundle": "spack",
-    "build": "yarn bundle"
+    "build": "rimraf dist && tsup src/index.ts --format cjs --dts",
+    "dev": "yarn bundle --watch"
   },
   "files": [
     "dist"
@@ -31,8 +31,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.3.20",
+    "@types/node": "^18.11.18",
+    "rimraf": "^3.0.2",
+    "tsup": "^6.5.0",
     "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "ajv": "^8.11.2"
   }
 }
