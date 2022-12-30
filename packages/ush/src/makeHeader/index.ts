@@ -4,7 +4,7 @@ import { validationJson } from "./validateJson";
 
 export const makeHeader = (): string | undefined => {
   const configJson = readTemplate();
-  console.log(configJson);
+  if (configJson.isFailure()) return undefined;
   const header = validationJson(configJson);
   if (header) {
     const configJsonVersion = getVersion();
