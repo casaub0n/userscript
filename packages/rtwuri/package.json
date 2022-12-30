@@ -14,7 +14,8 @@
     "node": ">=12"
   },
   "scripts": {
-    "build": "rimraf dist && spack",
+    "rmdist": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})'",
+    "build": "yarn rmdist && spack",
     "test": "echo hello"
   },
   "files": [
@@ -27,7 +28,6 @@
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.3.20",
     "header-inserter": "1.0.11",
-    "rimraf": "3.0.2",
     "typescript": "4.9.4"
   },
   "publishConfig": {

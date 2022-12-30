@@ -1,7 +1,7 @@
-import { redirectTwitterLocation } from './redirectTwitterLocation'
+import { redirectTwitterLocation } from "./redirectTwitterLocation";
 
 const run = (): void => {
-  redirectTwitterLocation()
-}
+  redirectTwitterLocation();
+};
 
-run()
+run();
