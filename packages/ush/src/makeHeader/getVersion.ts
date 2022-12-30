@@ -1,15 +1,17 @@
 import path from "path";
 import fs from "fs";
+import { Failure, Result, Success } from "../utils/Result";
 
-export const getVersion = () => {
+class DoSomethingError extends Error {}
+
+export const getVersion = (): Result<string, DoSomethingError> => {
   const packageJsonPath = path.join(process.cwd(), "package.json");
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
-  const isVersion = (version: any): version is string =>
-    version.type === "string" && version !== undefined;
   const version = packageJson.version;
-  console.log(`version: ${version}`);
-  if (isVersion(version)) {
-    return version;
+
+  if (version === "string" && version !== undefined) {
+    return new Success(version);
   }
-  return undefined;
+
+  return new Failure(new DoSomethingError());
 };
