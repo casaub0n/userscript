@@ -1,5 +1,5 @@
 import fs from "fs";
-import { firstLine } from "./firstLine";
+import { firstLine } from "./utils/firstLine";
 
 export const insertHeader = (file: string, comment: string): void => {
   const firstLineText = firstLine(file);
