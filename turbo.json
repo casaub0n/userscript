@@ -4,6 +4,11 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
+    },
+    "test": {
+      "outputs": [
+        "__report__/**"
+      ]
     }
   }
 }
