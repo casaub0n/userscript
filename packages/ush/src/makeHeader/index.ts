@@ -7,40 +7,18 @@ export const makeHeader = (): Result<string, DoSomethingError> => {
   if (configJson.isFailure()) return new Failure(new DoSomethingError());
   const header = configJson.value;
   const packageJsonVersion = getVersion();
-  if (packageJsonVersion.isFailure()) {
-    const userScriptHeader =
-      "// ==UserScript==\n// @name         " +
-      header.name +
-      "\n// @namespace    " +
-      header.namespace +
-      "\n// @version      " +
-      header.version +
-      "\n// @description  " +
-      header.description +
-      "\n// @author       " +
-      header.author +
-      "\n// @match        " +
-      header.match +
-      "\n// @grant        " +
-      header.grant +
-      "\n// ==/UserScript==\n\n";
-    return new Success(userScriptHeader);
-  }
-  const userScriptHeader =
-    "// ==UserScript==\n// @name         " +
-    header.name +
-    "\n// @namespace    " +
-    header.namespace +
-    "\n// @version      " +
-    packageJsonVersion.value +
-    "\n// @description  " +
-    header.description +
-    "\n// @author       " +
-    header.author +
-    "\n// @match        " +
-    header.match +
-    "\n// @grant        " +
-    header.grant +
-    "\n// ==/UserScript==\n\n";
+  const userScriptHeader = `// ==UserScript==\n
+// @name         ${header.name}\n
+// @namespace    ${header.namespace}\n
+// @version      ${
+    packageJsonVersion.isFailure()
+      ? header.description
+      : packageJsonVersion.value
+  }\n
+// @description  ${header.description}\n
+// @author       ${header.author}\n
+// @match        ${header.match}\n
+// @grant        ${header.grant}\n
+// ==/UserScript==\n\n`;
   return new Success(userScriptHeader);
 };
