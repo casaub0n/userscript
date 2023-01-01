@@ -1,9 +1,7 @@
 import path from "path";
 import fs from "fs";
-import { Failure, Result, Success } from "../utils/Result";
+import { DoSomethingError, Failure, Result, Success } from "../utils/Result";
 import { z } from "zod";
-
-class DoSomethingError extends Error {}
 
 const UserScript = z.object({
   name: z.string(),
