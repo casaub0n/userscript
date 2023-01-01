@@ -1,8 +1,6 @@
 import path from "path";
 import fs from "fs";
-import { Failure, Result, Success } from "../utils/Result";
-
-class DoSomethingError extends Error {}
+import { DoSomethingError, Failure, Result, Success } from "../utils/Result";
 
 export const getVersion = (): Result<string, DoSomethingError> => {
   const packageJsonPath = path.join(process.cwd(), "package.json");

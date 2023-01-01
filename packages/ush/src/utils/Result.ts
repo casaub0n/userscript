@@ -1,5 +1,6 @@
 export type Result<T, E> = Success<T, E> | Failure<T, E>;
 
+export class DoSomethingError extends Error {}
 export class Success<T, E> {
   constructor(readonly value: T) {}
   type = "success" as const;
