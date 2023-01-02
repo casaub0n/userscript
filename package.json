@@ -9,6 +9,9 @@
     "test": "turbo run test"
   },
   "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-custom": "*",
+    "prettier": "^2.8.1",
     "turbo": "1.6.3"
   }
 }
