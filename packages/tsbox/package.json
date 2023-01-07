@@ -1,11 +1,11 @@
 {
-  "name": "@casaub0n/ush",
+  "name": "@casaub0n/tsbox",
   "version": "1.0.0",
   "description": "Inserting header in your bundle JavaScript file",
   "license": "MIT",
   "repository": {
     "url": "casaub0n/userscript",
-    "directory": "packages/ush"
+    "directory": "packages/tsbox"
   },
   "author": {
     "name": "casaub0n",
@@ -19,7 +19,8 @@
   "scripts": {
     "test": "echo hello",
     "rmdist": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})'",
-    "build": "yarn rmdist && tsup src/index.ts --format cjs --dts"
+    "build": "yarn rmdist && tsup src/index.ts --format cjs --dts",
+    "dev": "node dist/index.js"
   },
   "files": [
     "dist"

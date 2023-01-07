@@ -9,6 +9,9 @@
       "outputs": [
         "__report__/**"
       ]
+    },
+    "dev": {
+      "dependsOn": ["^build"]
     }
   }
 }
