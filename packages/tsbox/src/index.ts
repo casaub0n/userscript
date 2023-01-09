@@ -16,5 +16,3 @@ flatArray.forEach((data) => {
 filterArray.forEach((data) => {
   console.log(data);
 });
-
-console.log("Takashi");
