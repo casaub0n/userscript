@@ -1,9 +1,20 @@
-// (TypeScript: satisfiesオペレーターの使い所のひとつとして - Qiita)[https://qiita.com/suin/items/1b74645158263d2fa9af]
-type Foo = {
-  id: number;
-  name: string;
-};
+import { filterArray, flatArray } from "./flatMapExample";
+import { satisfiesExampleJson } from "./satisfiesExample";
 
-const json = JSON.stringify({ id: 1, name: "foo" } satisfies Foo);
+console.log(satisfiesExampleJson);
 
-console.log(json);
+// https://typescript-jp.gitbook.io/deep-dive/type-system/typeguard#typeof
+flatArray.forEach((data) => {
+  if (typeof data === "string") {
+    console.log(`this type is string, value is ${data}`);
+  }
+  if (typeof data === "number") {
+    console.log(`this type is number, value is ${data}`);
+  }
+});
+
+filterArray.forEach((data) => {
+  console.log(data);
+});
+
+console.log("Takashi");
